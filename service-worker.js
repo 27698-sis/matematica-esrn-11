@@ -1,6 +1,6 @@
 // Service Worker para Matemática ESRN N°11
 // Versión del caché - incrementar cuando hay actualizaciones
-const CACHE_VERSION = 'v1.0.0';
+const CACHE_VERSION = 'v1.0.1';
 const CACHE_NAME = `matematica-esrn11-${CACHE_VERSION}`;
 
 // Recursos críticos para cachear inmediatamente
