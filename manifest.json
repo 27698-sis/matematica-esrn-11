@@ -66,29 +66,15 @@
       "name": "Números y Operaciones",
       "short_name": "Unidad 1",
       "description": "Acceso directo a Números y Operaciones",
-      "url": "/?unit=u1",
+      "url": "./?unit=u1",
       "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
     },
     {
       "name": "Álgebra y Expresiones",
       "short_name": "Unidad 2",
       "description": "Acceso directo a Álgebra",
-      "url": "/?unit=u2",
+      "url": "./?unit=u2",
       "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "screenshots/screenshot-wide.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
-    },
-    {
-      "src": "screenshots/screenshot-narrow.png",
-      "sizes": "750x1334",
-      "type": "image/png",
-      "form_factor": "narrow"
     }
   ],
   "related_applications": [],
