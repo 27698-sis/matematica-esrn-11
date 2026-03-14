@@ -5,11 +5,11 @@ const CACHE_NAME = `matematica-esrn11-${CACHE_VERSION}`;
 
 // Recursos críticos para cachear inmediatamente
 const CORE_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png'
+  './',
+  './index.html',
+  './manifest.json',
+  './icons/icon-192x192.png',
+  './icons/icon-512x512.png'
 ];
 
 // Recursos que se cachean a medida que se usan
@@ -105,7 +105,7 @@ self.addEventListener('fetch', (event) => {
             console.error('[SW] Error al hacer fetch:', error);
             
             // Retornar página offline si existe
-            return caches.match('/offline.html')
+            return caches.match('./offline.html')
               .then((offlineResponse) => {
                 return offlineResponse || new Response(
                   'Sin conexión. Esta aplicación necesita conexión para cargar nuevos recursos.',
@@ -153,3 +153,4 @@ self.addEventListener('sync', (event) => {
 });
 
 console.log('[SW] Service Worker cargado - versión', CACHE_VERSION);
+
