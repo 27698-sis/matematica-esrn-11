@@ -1,82 +1,27 @@
 {
-  "name": "Matemática ESRN N°11 — Río Negro",
-  "short_name": "Matemática ESRN 11",
-  "description": "Aplicación de matemática para 1° año de la ESRN N°11. Accesible para estudiantes no videntes. Diseño curricular provincial de Río Negro.",
-  "start_url": "./",
+  "name": "Matemáticas ESRN-11",
+  "short_name": "Matemáticas",
+  "description": "Aplicación educativa para el aprendizaje de matemáticas",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#1a1209",
-  "theme_color": "#1a1209",
-  "orientation": "any",
-  "scope": "./",
-  "lang": "es-AR",
-  "dir": "ltr",
-  "categories": ["education", "mathematics"],
+  "background_color": "#f8fafc",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "icons/icon-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-128x128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-192x192.png",
+      "src": "icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-512x512.png",
+      "src": "icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
   ],
-  "shortcuts": [
-    {
-      "name": "Números y Operaciones",
-      "short_name": "Unidad 1",
-      "description": "Acceso directo a Números y Operaciones",
-      "url": "./?unit=u1",
-      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
-    },
-    {
-      "name": "Álgebra y Expresiones",
-      "short_name": "Unidad 2",
-      "description": "Acceso directo a Álgebra",
-      "url": "./?unit=u2",
-      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
-    }
-  ],
-  "related_applications": [],
-  "prefer_related_applications": false
+  "categories": ["education", "productivity"],
+  "lang": "es",
+  "dir": "ltr"
 }
