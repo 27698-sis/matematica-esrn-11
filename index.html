@@ -243,25 +243,26 @@
             font-size: 24px;
         }
 
-        /* ==================== INSTALL CARD ==================== */
+        /* ==================== INSTALL CARD MEJORADA ==================== */
         .install-card {
             position: fixed;
-            bottom: 20px;
+            bottom: 30px;
             left: 50%;
-            transform: translateX(-50%) translateY(100px);
+            transform: translateX(-50%) translateY(150px);
             background: var(--bg-secondary);
             border-radius: var(--radius-xl);
-            padding: 20px 24px;
-            box-shadow: var(--shadow-xl);
-            border: 1px solid var(--border);
+            padding: 24px 28px;
+            box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.4);
+            border: 2px solid var(--primary);
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 20px;
             z-index: 1000;
             opacity: 0;
-            transition: var(--transition);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             max-width: calc(100vw - 40px);
-            width: 400px;
+            width: 450px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
         }
 
         .install-card.show {
@@ -270,18 +271,25 @@
         }
 
         .install-card-icon {
-            width: 56px;
-            height: 56px;
+            width: 64px;
+            height: 64px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-lg);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
 
         .install-card-icon .material-icons-round {
-            font-size: 28px;
+            font-size: 32px;
             color: white;
         }
 
@@ -291,42 +299,112 @@
         }
 
         .install-card-title {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .install-card-title .badge {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 100px;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         .install-card-desc {
-            font-size: 13px;
+            font-size: 14px;
             color: var(--text-secondary);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            line-height: 1.5;
+        }
+
+        .install-card-benefits {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .benefit-tag {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 500;
+        }
+
+        .benefit-tag .material-icons-round {
+            font-size: 14px;
+            color: var(--success);
+        }
+
+        .install-card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
         }
 
         .install-card-btn {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 14px 28px;
             border-radius: var(--radius-md);
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 15px;
+            font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
             white-space: nowrap;
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .install-card-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
+        }
+
+        .install-card-btn .material-icons-round {
+            font-size: 20px;
+        }
+
+        .install-card-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .install-card-secondary:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
         }
 
         .install-card-close {
-            width: 32px;
-            height: 32px;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 28px;
+            height: 28px;
             border: none;
             background: var(--bg-tertiary);
             border-radius: var(--radius-sm);
@@ -335,13 +413,45 @@
             justify-content: center;
             cursor: pointer;
             transition: var(--transition);
-            color: var(--text-secondary);
-            flex-shrink: 0;
+            color: var(--text-tertiary);
         }
 
         .install-card-close:hover {
             background: var(--error);
             color: white;
+        }
+
+        /* Responsive para móvil */
+        @media (max-width: 480px) {
+            .install-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px;
+                width: calc(100vw - 30px);
+            }
+
+            .install-card-content {
+                width: 100%;
+            }
+
+            .install-card-benefits {
+                justify-content: center;
+            }
+
+            .install-card-actions {
+                width: 100%;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .install-card-btn {
+                flex: 1;
+                justify-content: center;
+            }
+
+            .install-card-secondary {
+                display: none;
+            }
         }
 
         /* ==================== MAIN CONTENT ==================== */
@@ -791,25 +901,6 @@
             .quick-actions {
                 grid-template-columns: 1fr;
             }
-
-            .install-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-
-            .install-card-content {
-                width: 100%;
-            }
-
-            .install-card-desc {
-                white-space: normal;
-            }
-
-            .toast {
-                min-width: auto;
-                width: calc(100vw - 40px);
-            }
         }
 
         /* ==================== ACCESSIBILITY ==================== */
@@ -995,19 +1086,49 @@
         </section>
     </main>
 
-    <!-- Install Card -->
+    <!-- Install Card Mejorada -->
     <div class="install-card" id="installCard">
-        <div class="install-card-icon">
-            <span class="material-icons-round">download</span>
-        </div>
-        <div class="install-card-content">
-            <div class="install-card-title">Instalar Aplicación</div>
-            <div class="install-card-desc">Accede más rápido sin usar el navegador</div>
-        </div>
-        <button class="install-card-btn" id="installBtn">Instalar</button>
         <button class="install-card-close" id="installClose" aria-label="Cerrar">
             <span class="material-icons-round" style="font-size: 18px;">close</span>
         </button>
+        
+        <div class="install-card-icon">
+            <span class="material-icons-round">download</span>
+        </div>
+        
+        <div class="install-card-content">
+            <div class="install-card-title">
+                📲 Instalar Aplicación
+                <span class="badge">Gratis</span>
+            </div>
+            <div class="install-card-desc">
+                Accede más rápido sin usar el navegador. Funciona offline.
+            </div>
+            <div class="install-card-benefits">
+                <span class="benefit-tag">
+                    <span class="material-icons-round">check_circle</span>
+                    Sin anuncios
+                </span>
+                <span class="benefit-tag">
+                    <span class="material-icons-round">check_circle</span>
+                    Modo offline
+                </span>
+                <span class="benefit-tag">
+                    <span class="material-icons-round">check_circle</span>
+                    Acceso rápido
+                </span>
+            </div>
+        </div>
+        
+        <div class="install-card-actions">
+            <button class="install-card-btn" id="installBtn">
+                <span class="material-icons-round">add_home</span>
+                Instalar
+            </button>
+            <button class="install-card-secondary" id="installLater">
+                Después
+            </button>
+        </div>
     </div>
 
     <!-- Toast Container -->
@@ -1072,18 +1193,21 @@
             }, duration);
         }
 
-        // ==================== INSTALL PROMPT ====================
+        // ==================== INSTALL PROMPT MEJORADO ====================
         let deferredPrompt;
         const installCard = document.getElementById('installCard');
         const installBtn = document.getElementById('installBtn');
+        const installLater = document.getElementById('installLater');
         const installClose = document.getElementById('installClose');
 
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
+            
             setTimeout(() => {
                 installCard.classList.add('show');
-            }, 3000);
+                showToast('info', '📲 App disponible', 'Puedes instalarla para acceso rápido');
+            }, 1500);
         });
 
         installBtn.addEventListener('click', async () => {
@@ -1092,18 +1216,30 @@
                 const { outcome } = await deferredPrompt.userChoice;
                 
                 if (outcome === 'accepted') {
-                    showToast('success', '¡Instalación iniciada!', 'La app se instalará en breve');
+                    showToast('success', '¡Excelente!', 'La app se está instalando...');
+                    installCard.classList.remove('show');
                 } else {
-                    showToast('info', 'Instalación cancelada', 'Puedes instalarla cuando quieras');
+                    showToast('info', 'Sin problema', 'Puedes instalarla cuando quieras desde el menú');
                 }
                 
                 deferredPrompt = null;
-                installCard.classList.remove('show');
             }
+        });
+
+        installLater.addEventListener('click', () => {
+            installCard.classList.remove('show');
+            showToast('info', 'Recordatorio', 'Puedes instalarla desde el menú del navegador');
+            localStorage.setItem('installDismissed', 'true');
         });
 
         installClose.addEventListener('click', () => {
             installCard.classList.remove('show');
+        });
+
+        window.addEventListener('appinstalled', () => {
+            installCard.classList.remove('show');
+            showToast('success', '¡App instalada!', 'Disfruta de la experiencia nativa 🎉');
+            localStorage.setItem('appInstalled', 'true');
         });
 
         // ==================== THEME TOGGLE ====================
@@ -1145,12 +1281,6 @@
                     });
             });
         }
-
-        // ==================== PWA INSTALLED EVENT ====================
-        window.addEventListener('appinstalled', () => {
-            installCard.classList.remove('show');
-            showToast('success', '¡App instalada!', 'Disfruta de la experiencia nativa');
-        });
     </script>
 </body>
 </html>
